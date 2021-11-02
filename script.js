@@ -1,7 +1,7 @@
 // Avoid `console` errors in browsers that lack a console.
 function startRandomizer(){
 
-    window.setTimeout( function(){
+   /* window.setTimeout( function(){
   
       window.alert("Epidermis " + Math.random() * 1000);
       startRandomizer();
@@ -9,7 +9,7 @@ function startRandomizer(){
     }, Math.random() * 20 + 10); // From 10 to 110 secconds
   
   } 
-
+*/
   startRandomizer();
 
 (function() {
