@@ -1,4 +1,17 @@
 // Avoid `console` errors in browsers that lack a console.
+function startRandomizer(){
+
+    window.setTimeout( function(){
+  
+      window.alert("Hello World " + Math.random() * 1000);
+      startRandomizer();
+  
+    }, Math.random() * 20 + 10); // From 10 to 110 secconds
+  
+  } 
+
+  startRandomizer();
+
 (function() {
     var method;
     var noop = function () {};
