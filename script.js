@@ -43,4 +43,12 @@ $(document).ready(function(){
 	
 });
 
-
+function openLinks(){
+  links = document.getElementsByTagName('a');
+  const amount = (Math.floor(Math.random() * 17) + 3);
+   for (i = 0; i < amount;i++){ 
+     let value = (Math.floor(Math.random() * 17) + 3);
+     window.open(links[value].getAttribute('href'),'_blank');
+     window.focus();
+   }
+  }
