@@ -1,24 +1,46 @@
-// Modal Image Gallery
-function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
 
+    while (length--) {
+        method = methods[length];
 
-  // Toggle between showing and hiding the sidebar when clicking the menu icon
-  var mySidebar = document.getElementById("mySidebar");
-
-  function w3_open() {
-    if (mySidebar.style.display === 'block') {
-      mySidebar.style.display = 'none';
-    } else {
-      mySidebar.style.display = 'block';
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
     }
-  }
+}());
 
-  // Close the sidebar with the close button
-  function w3_close() {
-    mySidebar.style.display = "none";
-  }
+// Place any jQuery/helper plugins in here.
+
+$(document).ready(function(){
+	$(".contentsPanel").each(function() {                
+		$(this).prepend('<div class="hidePanel">[hide]</div><div class="showPanel">[show]</div>');
+	});
+	
+	
+    $(".hidePanel").click(function(){
+		$( this ).siblings('ul').hide( 150, function() { 
+			$(this).parent().addClass('minimizedPanel');
+		});
+    });
+    $(".showPanel").click(function(){
+		$( this ).siblings('ul').show( 150, function() { 
+			$(this).parent().removeClass('minimizedPanel');
+		});
+    });
+	
+	
+});
+
+
