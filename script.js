@@ -96,7 +96,7 @@ function checkCookie() {
   let numVisits = cookies.visits;
   if (numVisits == 1) {
     alert("You've come back here " + numVisits + " time and you still haven't solved the challenge?");
-    document.cookie = "visits=" + numVisits+1 + ; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
+    document.cookie = "visits=" + numVisits+1 + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
   }
   else if (numVisits > 1) {
     alert("You've come back here " + numVisits + " times and you still haven't solved the challenge?");
