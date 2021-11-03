@@ -94,8 +94,8 @@ function checkCookie() {
   .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
   let numVisits = cookies.visits;
-  let newVisits = parseInt(numVisits);
-  
+  let newVisits = Number(numVisits);
+
   newVisits++;
 
   if (numVisits == 1) {
