@@ -70,18 +70,29 @@ function shit(){
     }
 }*/
   
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+  
 function checkCookie() {
-  var cookies = document.cookie
-  .split(';')
-  .map(cookie => cookie.split('='))
-  .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
-  let numVisits = cookies.visits;
+  let numVisits = getCookie("visits");
   if (numVisits > 0) {
-    alert("You've come back here " + numVisits + " times and you still haven't solved the challenge?");
+    alert("You've come back here " + user + " times and you still haven't solved the challenge?");
     document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
   } 
   else {
       document.cookie = "visits=1; expires=Thu, 25 Dec 2100 12:00:00 UTC";
-    }
   }
 }
