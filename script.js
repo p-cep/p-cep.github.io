@@ -94,13 +94,14 @@ function checkCookie() {
   .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
   let numVisits = cookies.visits;
+  let newVisits = numVisits+1;
   if (numVisits == 1) {
-    alert("You've come back here " + numVisits + " time and you still haven't solved the challenge?");
-    document.cookie = "visits=" + numVisits+1 + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
+    alert("You've already been here. Were you unable to figure out the challenge?");
+    document.cookie = "visits=" + newVisits + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
   }
   else if (numVisits > 1) {
-    alert("You've come back here " + numVisits + " times and you still haven't solved the challenge?");
-    document.cookie = "visits=" + numVisits+1 + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
+    alert("You've already been here " + numVisits + " times and you still haven't solved the challenge?");
+    document.cookie = "visits=" + newVisits + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
   } 
   else {
       document.cookie = "visits=1; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
