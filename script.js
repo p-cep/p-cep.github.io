@@ -82,7 +82,6 @@ function checkCookie() {
     document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
   } 
   else {
-    if (numVisits == 0) {
       document.cookie = "visits=1; expires=Thu, 25 Dec 2100 12:00:00 UTC";
     }
   }
