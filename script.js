@@ -60,33 +60,7 @@ function shit(){
   }
   }
 
-/*
-  function setCookie() {
-    if(visits == 0){
-    document.cookie = "visits=1; expires=Thu, 25 Dec 2100 12:00:00 UTC";
-    }
-    else{
-    document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
-    }
-}*/
-  
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-  
-function checkCookie() {
+  function checkCookie() {
 
   var cookies = document.cookie
   .split(';')
