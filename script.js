@@ -95,8 +95,9 @@ function checkCookie() {
 
   let numVisits = cookies.visits;
   let newVisits = parseInt(numVisits);
-  newVisits = newVisits++;
   
+  newVisits++;
+
   if (numVisits == 1) {
     alert("You've already been here. Were you unable to figure out the challenge?");
     document.cookie = "visits=" + newVisits + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
