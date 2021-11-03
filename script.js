@@ -94,9 +94,10 @@ function checkCookie() {
   .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
   let numVisits = cookies.visits;
+  let test = 2;
   if (numVisits == 1) {
     alert("You've come back here " + numVisits + " time and you still haven't solved the challenge?");
-    document.cookie = "visits =" + numVisits++ + "; expires=Thu, 25 Dec 2100 12:00:00 UTC";
+    document.cookie = "visits =" + test + "; expires=Thu, 25 Dec 2100 12:00:00 UTC";
   }
   else if (numVisits > 1) {
     alert("You've come back here " + numVisits + " times and you still haven't solved the challenge?");
