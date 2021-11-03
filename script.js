@@ -60,7 +60,6 @@ function shit(){
   }
   }
 
-let visits = 0;
 /*
   function setCookie() {
     if(visits == 0){
@@ -78,7 +77,7 @@ function checkCookie() {
   .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
   let numVisits = cookies.visits;
   if (numVisits > 0) {
-    alert("You've come back here " + user + " times and you still haven't solved the challenge?");
+    alert("You've come back here " + numVisits + " times and you still haven't solved the challenge?");
     document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
   } 
   else {
