@@ -94,7 +94,9 @@ function checkCookie() {
   .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
 
   let numVisits = cookies.visits;
-  let newVisits = numVisits+1;
+  let newVisits = parseInt(numVisits);
+  newVisits = newVisits++;
+  
   if (numVisits == 1) {
     alert("You've already been here. Were you unable to figure out the challenge?");
     document.cookie = "visits=" + newVisits + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
