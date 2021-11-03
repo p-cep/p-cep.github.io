@@ -71,16 +71,12 @@ let visits = 0;
     }
 }*/
   
-function getCookie(cname) {
-var cookies = document.cookie
+function checkCookie() {
+  var cookies = document.cookie
   .split(';')
   .map(cookie => cookie.split('='))
   .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
-  return cookies.visits;
-}
-  
-function checkCookie() {
-  let numVisits = getCookie("visits");
+  let numVisits = cookies.visits;
   if (numVisits > 0) {
     alert("You've come back here " + user + " times and you still haven't solved the challenge?");
     document.cookie = "visits++; expires=Thu, 25 Dec 2100 12:00:00 UTC";
