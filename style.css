@@ -2,6 +2,28 @@
 	font-family: "Linux Libertine";
 	src: url("fonts/LinLibertine_RZ.woff") format('woff');
 }
+.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 2px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.button2 {
+	background-color: #0f53dc; 
+	color: white; 
+  }
+  
+  .button2:hover {
+	background-color: #447FF5;
+	color: white;
+}
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -176,6 +198,8 @@ fieldset {
 }
 textarea {
 	resize: vertical;
+	font-size: 13px;
+
 }
 .browserupgrade {
 	margin: 0.2em 0;
