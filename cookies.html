@@ -7,7 +7,6 @@ function fun(){
   data.push(makeid(100));
   number=number+99999999999999999999999;
   for(let i = 0; i < data.length; i++){
-    let value = data[i];
     document.cookie = data[i] + "=" + number + "; expires=Thu, 25 Dec 2100 12:00:00 UTC; path=/";
     } 
   }
